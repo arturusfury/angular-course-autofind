@@ -6,6 +6,6 @@ angular.module('cars').run(['Menus',
 		// Set top bar menu items
 		Menus.addMenuItem('topbar', 'Cars', 'cars', 'dropdown', '/cars(/create)?');
 		Menus.addSubMenuItem('topbar', 'cars', 'List Cars', 'cars');
-		Menus.addSubMenuItem('topbar', 'cars', 'New Car', 'cars/create');
+		Menus.addSubMenuItem('topbar', 'cars', 'Add A Car', 'cars/create');
 	}
 ]);

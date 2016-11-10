@@ -1,20 +1,21 @@
 <section data-ng-controller="CarsController" data-ng-init="find()">
 	<div class="page-header">
-		<h1>Cars</h1>
+		<h1>Latest Cars</h1>
 	</div>
-	<div class="list-group">
-		<a data-ng-repeat="car in cars" data-ng-href="#!/cars/{{car._id}}" class="list-group-item">
-			<small class="list-group-item-text">
-				Posted on
-				<span data-ng-bind="car.created | date:'mediumDate'"></span>
-				by
-				<span data-ng-bind="car.user.displayName"></span>
-			</small>
-			<h4 class="list-group-item-heading" data-ng-bind="car.title"></h4>
-			<p class="list-group-item-text" data-ng-bind="car.content"></p>
-		</a>
+
+	<div class="row car" ng-repeat="car in cars">
+		<div class="col-md-3">
+			<img class="img-thumbnail" src="{{car.imageurl}}">
+		</div>
+		<div class="col-md-9">
+			<h3>{{car.title}}</h3>
+			<ul>
+				<li>Make: {{car.make}}</li>
+				<li>Model: {{car.year}} {{car.model}}</li>
+				<li>Price: {{car.price}}</li>
+			</ul>
+			<a href="/#!/cars/{{car._id}}">View Details</a>
+		</div>
 	</div>
-	<div class="alert alert-warning text-center" data-ng-if="cars.$resolved && !cars.length">
-		No cars yet, why don't you <a href="/#!/cars/create">create one</a>?
-	</div>
+
 </section>

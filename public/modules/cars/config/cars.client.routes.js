@@ -17,6 +17,10 @@ angular.module('cars').config(['$stateProvider',
 			url: '/cars/:carId',
 			templateUrl: 'modules/cars/views/view-car.client.view.html'
 		}).
+		state('searchCar', {
+			url: '/search',
+			templateUrl: 'modules/cars/views/search-car.client.view.html'
+		}).
 		state('editCar', {
 			url: '/cars/:carId/edit',
 			templateUrl: 'modules/cars/views/edit-car.client.view.html'
